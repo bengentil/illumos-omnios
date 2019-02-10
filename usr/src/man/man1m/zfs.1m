@@ -292,6 +292,17 @@ where the maximum length of a dataset name is
 .Dv MAXNAMELEN
 .Pq 256 bytes
 and the maximum amount of nesting allowed in a path is 50 levels deep.
+The dataset name can only contain ASCII alphanumeric characters
+as well as underscore
+.Pq Qq Sy _ ,
+dash
+.Pq Qq Sy - ,
+colon
+.Pq Qq Sy : ,
+space
+.Pq Qq Sy   ,
+and period
+.Pq Qq Sy \&. .
 .Pp
 A dataset can be one of the following:
 .Bl -tag -width "file system"
