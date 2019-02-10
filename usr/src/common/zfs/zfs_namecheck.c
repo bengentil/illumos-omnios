@@ -234,6 +234,13 @@ entity_namecheck(const char *path, namecheck_err_t *why, char *what)
 			}
 		}
 
+		/* "." and ".." are not valid entity names */
+		if (strcmp(start, ".") == 0 || strcmp(start, "..") == 0) {
+			if (why)
+				*why = NAME_ERR_RESERVED;
+			return (-1);
+		}
+
 		/* Snapshot or bookmark delimiter found */
 		if (*end == '@' || *end == '#') {
 			/* Multiple delimiters are not allowed */
